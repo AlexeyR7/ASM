@@ -1,0 +1,9 @@
+﻿  Laba3.cpp
+C:\Users\ra97\source\repos\AlexeyR7\ASM\Laba3\Laba3\Laba3.cpp(19,12): warning C4305: инициализация: усечение из "double" в "const float"
+C:\Users\ra97\source\repos\AlexeyR7\ASM\Laba3\Laba3\Laba3.cpp(21,5): error C4235: использовано нестандартное расширение: ключевое слово "__asm" данной архитектурой не поддерживается
+C:\Users\ra97\source\repos\AlexeyR7\ASM\Laba3\Laba3\Laba3.cpp(23,9): error C2065: movss: необъявленный идентификатор
+C:\Users\ra97\source\repos\AlexeyR7\ASM\Laba3\Laba3\Laba3.cpp(23,15): error C2146: синтаксическая ошибка: отсутствие ";" перед идентификатором "xmm2"
+C:\Users\ra97\source\repos\AlexeyR7\ASM\Laba3\Laba3\Laba3.cpp(23,15): error C2065: xmm2: необъявленный идентификатор
+C:\Users\ra97\source\repos\AlexeyR7\ASM\Laba3\Laba3\Laba3.cpp(24,13): error C3260: "идентификатор": пропускаются непредвиденные токены перед телом лямбда-функции
+C:\Users\ra97\source\repos\AlexeyR7\ASM\Laba3\Laba3\Laba3.cpp(62,44): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\Users\ra97\source\repos\AlexeyR7\ASM\Laba3\Laba3\Laba3.cpp(69,1): fatal error C1004: непредвиденное обнаружение конца файла

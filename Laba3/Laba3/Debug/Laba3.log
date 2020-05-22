@@ -1,0 +1,4 @@
+﻿  Laba3.cpp
+C:\Users\ra97\source\repos\AlexeyR7\ASM\Laba3\Laba3\Laba3.cpp(19,12): warning C4305: инициализация: усечение из "double" в "const float"
+C:\Users\ra97\source\repos\AlexeyR7\ASM\Laba3\Laba3\Laba3.cpp(62,44): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+  Laba3.vcxproj -> C:\Users\ra97\source\repos\AlexeyR7\ASM\Laba3\Debug\Laba3.exe
