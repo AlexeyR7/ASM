@@ -6,7 +6,6 @@ using namespace std;
 
 
 double arccos(double x) {
-
     _asm
     {
         fld qword ptr[x]      // Загрузить x
