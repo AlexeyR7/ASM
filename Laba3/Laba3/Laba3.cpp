@@ -5,7 +5,6 @@
 #define Pi  3.14159265358979323846  /* pi */
 using namespace std;
 
-
 float fTg(float x)
 {
     const float ctable[] = {
@@ -39,19 +38,18 @@ float fTg(float x)
         mov ecx, 5 // Инициализировали счётчик цикла
         tg_loop: // Цикл вычисления полинома
         movss xmm3, [edx + 4 * ecx] // Загружаем текущий коэффициент в xmm3
-            mulps xmm0, xmm2 // Умножаем предыдущий результат на x^2
-            movlhps xmm3, xmm3 // Продублировать коэффициент в xmm3
-            addps xmm0, xmm3 // Прибавляем текущий коэффициент (схема Горнера)
-            loop tg_loop // Учесть все 5 коэффициентов
-            mulps xmm1, xmm0 // Домножить на x, получаем готовый результат
-            movhlps xmm0, xmm1 // Поместить в xmm0 старшую часть результата (синус)
-            divss xmm0, xmm1 // Разделить синус на косинус
-            tg_end : // Результат в xmm0 готов
+        mulps xmm0, xmm2 // Умножаем предыдущий результат на x^2
+        movlhps xmm3, xmm3 // Продублировать коэффициент в xmm3
+        addps xmm0, xmm3 // Прибавляем текущий коэффициент (схема Горнера)
+        loop tg_loop // Учесть все 5 коэффициентов
+        mulps xmm1, xmm0 // Домножить на x, получаем готовый результат
+        movhlps xmm0, xmm1 // Поместить в xmm0 старшую часть результата (синус)
+        divss xmm0, xmm1 // Разделить синус на косинус
+        tg_end : // Результат в xmm0 готов
         movss[x], xmm0 // Переносим результат в стек сопроцессора
-            fld dword ptr[x] // в соответствии с соглашениями Delphi
+        fld dword ptr[x]
     }
 }
-
 
 int main()
 {
@@ -59,10 +57,8 @@ int main()
     cout << "fTg\n";
     for (double i = -1.57; i < 1.57; i+=0.1)
     {
-        cout << "fTg("<<i<<")\t=\t" << fTg(i) << endl;
+        cout << "fTg("<< round(i * 100) / 100 <<")\t=\t" << fTg(i) << endl;
     }
-
-
     getchar();
 }
 

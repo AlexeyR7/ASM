@@ -20,33 +20,34 @@ double ipow(double x, long n)
         jmp start_loop1
         loop1 :
         fmul st(0), st(0)
-            start_loop1 :
-            shr eax, 1
-            jnc loop1
-            jz p_exit
-            fld st(0)       //x,x
-            P_loop :
-            fmul st(0), st(0)
-            shr eax, 1
-            jnc p_test_z
-            fmul st(1), st(0)
-            p_test_z :
-            jnc p_loop
-            p_end :
+        start_loop1 :
+        shr eax, 1
+        jnc loop1
+        jz p_exit
+        fld st(0)       //x,x
+        P_loop :
+        fmul st(0), st(0)
+        shr eax, 1
+        jnc p_test_z
+        fmul st(1), st(0)
+        p_test_z :
+        jnc p_loop
+        p_end :
         fstp st(0)
-            p_exit :
+        p_exit :
     }
 }
 
 int main()
 {
 
-    cout << "fTg\n";
-    int n = 10;
-    for (double i = 1; i < 5; i += 0.5)
-    {
+    cout << "ipow\n";
+    int n = 3;
+    for (int i = -3; i < 5; i ++) {
+        cout << "ipow(" << 2 << "," << i << ") \t=\t" << ipow(2, i) << endl;
+    }
+    for (double i = -4; i < 4; i += 0.5) {
         cout << "ipow(" << i << "," << n << ") \t=\t" << ipow(i, n) << endl;
     }
-
     getchar();
 }
